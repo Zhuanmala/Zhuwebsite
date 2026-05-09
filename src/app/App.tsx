@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Mail, Phone, MapPin, X } from "lucide-react";
 
 type Language = "zh" | "en";
 
@@ -13,26 +13,41 @@ type Project = {
   year: string;
   venue: LocalizedText;
   image: string;
+  images?: string[];
   description: LocalizedText;
 };
+
+const tranquillaGalleryImages = [
+  "/tranquilla/01.jpg",
+  "/tranquilla/02.jpg",
+  "/tranquilla/03.jpg",
+  "/tranquilla/04.jpg",
+  "/tranquilla/05.jpg",
+  "/tranquilla/06.jpg",
+  "/tranquilla/07.jpg",
+  "/tranquilla/08.jpg",
+  "/tranquilla/09.jpg",
+  "/tranquilla/10.jpg",
+];
 
 const projects: Project[] = [
   {
     id: 1,
-    title: "Der Ring des Nibelungen",
+    title: "Tranquilla Trampeltreu / Der Lindwurm und der Schmetterling",
     subtitle: {
-      zh: "瓦格纳《指环》四部曲",
-      en: "Wagner's Ring Cycle tetralogy",
+      zh: "Wilfried Hiller / Michael Ende 儿童音乐会",
+      en: "Children's concert by Wilfried Hiller / Michael Ende",
     },
-    year: "2026",
+    year: "2025",
     venue: {
-      zh: "巴伐利亚国立歌剧院",
-      en: "Bavarian State Opera",
+      zh: "巴伐利亚国立歌剧院 · Bergson Kunstkraftwerk",
+      en: "Bavarian State Opera · Bergson Kunstkraftwerk",
     },
-    image: "https://images.unsplash.com/photo-1654773615210-cc0e1899d934?w=1080",
+    image: tranquillaGalleryImages[0],
+    images: tranquillaGalleryImages,
     description: {
-      zh: "深度参与 2026 版瓦格纳《指环》四部曲视觉开发与制作执行，负责舞美设计协调与技术实现。",
-      en: "Contributed to the visual development and production execution of the 2026 Ring Cycle, with a focus on stage design coordination and technical realization.",
+      zh: "Bayerische Staatsoper Kind&Co 儿童音乐会，面向 5 岁以上观众，时长约 60 分钟、无中场休息。作品由巴伐利亚国家管弦乐团与国立歌剧院歌唱家讲述两则 Michael Ende 的动物寓言，音乐由 Wilfried Hiller 创作。导演 Catharina von Bülow，音乐指导 Rafaela Seywald；朱佳乐负责道具设计。",
+      en: "A Bayerische Staatsoper Kind&Co children's concert for audiences aged 5 and above, with a running time of about 60 minutes and no interval. The Bavarian State Orchestra and singers from the State Opera tell two animal fables by Michael Ende, set to music by Wilfried Hiller. Directed by Catharina von Bülow and conducted by Rafaela Seywald; Jiale Zhu is credited with prop design.",
     },
   },
   {
@@ -136,10 +151,10 @@ const content = {
     },
     hero: {
       name: "朱佳乐",
-      role: "舞美设计师",
+      role: "舞台和服装设计师",
       location: "慕尼黑 / 上海",
       intro: [
-        "舞美设计师，现供职于德国巴伐利亚国立歌剧院。",
+        "舞台和服装设计师，现供职于德国巴伐利亚国立歌剧院。",
         "专注于歌剧、戏剧的空间与视觉创作，探索舞台艺术的当代表达。",
       ],
     },
@@ -172,12 +187,12 @@ const content = {
         {
           years: "2024 - Present",
           place: "Bayerische Staatsoper",
-          role: "舞美设计助理 · 慕尼黑",
+          role: "舞台和服装设计助理 · 慕尼黑",
         },
         {
           years: "2022 - 2023",
           place: "European Opera Houses & Festivals",
-          role: "舞美设计助理",
+          role: "舞台和服装设计助理",
         },
       ],
       skillsTitle: "技能",
@@ -188,10 +203,12 @@ const content = {
     },
     contact: {
       title: "联系",
-      copy: "开放合作机会，欢迎讨论舞台设计、歌剧、戏剧与视觉艺术相关项目。",
+      copy: "开放合作机会，欢迎讨论舞台设计、服装设计、歌剧、戏剧与视觉艺术相关项目。",
     },
-    footerRole: "舞美设计师",
+    footerRole: "舞台和服装设计师",
     closeProject: "关闭项目详情",
+    previousImage: "上一张图片",
+    nextImage: "下一张图片",
   },
   en: {
     nav: {
@@ -201,10 +218,10 @@ const content = {
     },
     hero: {
       name: "Zhu Jiale",
-      role: "Stage Designer",
+      role: "Stage and Costume Designer",
       location: "Munich / Shanghai",
       intro: [
-        "Stage designer currently working at the Bavarian State Opera in Germany.",
+        "Stage and costume designer currently working at the Bavarian State Opera in Germany.",
         "Focused on spatial and visual creation for opera and theater, exploring contemporary expressions of stage art.",
       ],
     },
@@ -237,12 +254,12 @@ const content = {
         {
           years: "2024 - Present",
           place: "Bayerische Staatsoper",
-          role: "Assistant Stage Designer · Munich",
+          role: "Assistant Stage and Costume Designer · Munich",
         },
         {
           years: "2022 - 2023",
           place: "European Opera Houses & Festivals",
-          role: "Assistant Stage Designer",
+          role: "Assistant Stage and Costume Designer",
         },
       ],
       skillsTitle: "SKILLS",
@@ -253,10 +270,12 @@ const content = {
     },
     contact: {
       title: "Get in Touch",
-      copy: "Available for collaborations in stage design, opera, theater, and visual arts projects.",
+      copy: "Available for collaborations in stage design, costume design, opera, theater, and visual arts projects.",
     },
-    footerRole: "Stage Designer",
+    footerRole: "Stage and Costume Designer",
     closeProject: "Close project details",
+    previousImage: "Previous image",
+    nextImage: "Next image",
   },
 } satisfies Record<Language, unknown>;
 
@@ -266,7 +285,39 @@ const creativeSkills = ["Photoshop, InDesign", "Premiere, Final Cut", "Costume C
 export default function App() {
   const [language, setLanguage] = useState<Language>("en");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const t = content[language];
+  const selectedProjectImages = selectedProject
+    ? selectedProject.images?.length ? selectedProject.images : [selectedProject.image]
+    : [];
+  const currentProjectImage = selectedProjectImages[currentImageIndex] ?? selectedProject?.image ?? "";
+
+  useEffect(() => {
+    if (selectedProjectImages.length <= 1) return;
+
+    const timer = window.setInterval(() => {
+      setCurrentImageIndex((current) => (current + 1) % selectedProjectImages.length);
+    }, 4200);
+
+    return () => window.clearInterval(timer);
+  }, [selectedProjectImages.length]);
+
+  const openProject = (project: Project) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(0);
+  };
+
+  const showPreviousProjectImage = () => {
+    if (selectedProjectImages.length <= 1) return;
+    setCurrentImageIndex((current) => (
+      current - 1 + selectedProjectImages.length
+    ) % selectedProjectImages.length);
+  };
+
+  const showNextProjectImage = () => {
+    if (selectedProjectImages.length <= 1) return;
+    setCurrentImageIndex((current) => (current + 1) % selectedProjectImages.length);
+  };
 
   return (
     <div className="min-h-screen bg-black text-white" lang={language === "zh" ? "zh-CN" : "en"}>
@@ -439,7 +490,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  onClick={() => setSelectedProject(project)}
+                  onClick={() => openProject(project)}
                   className="group cursor-pointer relative"
                 >
                   <div className="absolute -top-2 -left-2 w-4 h-4 border-l border-t border-white/0 group-hover:border-white/30 transition-colors duration-500 z-10" />
@@ -644,12 +695,51 @@ export default function App() {
             className="max-w-4xl w-full bg-black border border-white/10 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative aspect-[16/9] overflow-hidden">
+            <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
               <img
-                src={selectedProject.image}
+                src={currentProjectImage}
                 alt={selectedProject.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
+
+              {selectedProjectImages.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    aria-label={t.previousImage}
+                    onClick={showPreviousProjectImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 border border-white/25 bg-black/45 hover:bg-white hover:text-black transition-colors flex items-center justify-center"
+                  >
+                    <ChevronLeft size={22} />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label={t.nextImage}
+                    onClick={showNextProjectImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 border border-white/25 bg-black/45 hover:bg-white hover:text-black transition-colors flex items-center justify-center"
+                  >
+                    <ChevronRight size={22} />
+                  </button>
+                  <div className="absolute left-6 right-6 bottom-5 flex items-center justify-between gap-4">
+                    <div className="text-xs text-white/80 bg-black/45 px-3 py-1">
+                      {String(currentImageIndex + 1).padStart(2, "0")} / {String(selectedProjectImages.length).padStart(2, "0")}
+                    </div>
+                    <div className="flex gap-2">
+                      {selectedProjectImages.map((image, index) => (
+                        <button
+                          key={image}
+                          type="button"
+                          aria-label={`${index + 1}`}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`h-1.5 transition-all ${
+                            index === currentImageIndex ? "w-8 bg-white" : "w-3 bg-white/40 hover:bg-white/70"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
             <div className="p-8 md:p-12">
               <div className="flex justify-between items-start mb-6 gap-6">
