@@ -93,7 +93,7 @@ const projects: Project[] = [
       zh: "巴伐利亚国立歌剧院 · Bergson Kunstkraftwerk",
       en: "Bavarian State Opera · Bergson Kunstkraftwerk",
     },
-    image: tranquillaGalleryImages[4],
+    image: tranquillaGalleryImages[0],
     images: tranquillaGalleryImages,
     description: {
       zh: "Children's concert by Wilfried Hiller / Michael Ende。Bayerische Staatsoper Kind&Co 儿童音乐会，面向 5 岁以上观众，时长约 60 分钟、无中场休息。Musikalische Leitung: Rafaela Seywald. Szenische Einrichtung: Catharina von Bülow. Ausstattung: Jiale Zhu.",
@@ -112,7 +112,7 @@ const projects: Project[] = [
       zh: "Max Schlereth Saal Universität Mozarteum",
       en: "Max Schlereth Saal Universität Mozarteum",
     },
-    image: unterweltGalleryImages[0],
+    image: unterweltGalleryImages[2],
     images: unterweltGalleryImages,
     description: {
       zh: "Orphous in der Unterwelt. Opéra-Bouffon in 2 Akten/4 Bildern. Musik von Jacques Offenbach, Version 1858. Musikalische Leitung: Kai Röhrig. Regie: Rosamund Gilmore. Bühne: Jiale Zhu. Kostüme: Jisu Park. Dramaturgie: Ronny Dietrich.",
