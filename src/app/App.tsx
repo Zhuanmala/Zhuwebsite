@@ -64,6 +64,7 @@ const xingHanYunYiGalleryImages = [
   "/xing-han-yun-yi/01.jpg",
   "/xing-han-yun-yi/02.jpg",
   "/xing-han-yun-yi/03.jpg",
+  "/xing-han-yun-yi/04.jpg",
 ];
 
 const chaYuFanHouGalleryImages = [
@@ -103,8 +104,8 @@ const projects: Project[] = [
     id: 2,
     title: "Orphous in der Unterwelt",
     subtitle: {
-      zh: "Opéra-Bouffon in 2 Akten/4 Bildern",
-      en: "Opéra-Bouffon in 2 Akten/4 Bildern",
+      zh: "舞台设计 · 朱佳乐",
+      en: "Stage Design · Jiale Zhu",
     },
     year: "2021",
     venue: {
@@ -122,7 +123,7 @@ const projects: Project[] = [
     id: 3,
     title: "Panic:Attacks",
     subtitle: {
-      zh: "Costume Design · Jiale Zhu",
+      zh: "服装设计 · 朱佳乐",
       en: "Costume Design · Jiale Zhu",
     },
     year: "2022",
@@ -141,8 +142,8 @@ const projects: Project[] = [
     id: 4,
     title: "Rausch",
     subtitle: {
-      zh: "Costume Design · Jiale Zhu",
-      en: "Costume Design · Jiale Zhu",
+      zh: "舞台、服装、灯光设计 · 朱佳乐",
+      en: "Stage, costume and lighting design · Jiale Zhu",
     },
     year: "2021",
     venue: {
@@ -152,16 +153,16 @@ const projects: Project[] = [
     image: rauschGalleryImages[0],
     images: rauschGalleryImages,
     description: {
-      zh: "Directed by: Lea Oltmanns. Stage: Julia Soest, Magdalena Hofer, Jiale Zhu. Costume Design: Jiale Zhu.",
-      en: "Directed by: Lea Oltmanns. Stage: Julia Soest, Magdalena Hofer, Jiale Zhu. Costume Design: Jiale Zhu.",
+      zh: "Directed by: Lea Oltmanns. Stage: Julia Soest, Magdalena Hofer, Jiale Zhu. Stage, costume and lighting design: Jiale Zhu.",
+      en: "Directed by: Lea Oltmanns. Stage: Julia Soest, Magdalena Hofer, Jiale Zhu. Stage, costume and lighting design: Jiale Zhu.",
     },
   },
   {
     id: 5,
     title: "Die Zauberflote",
     subtitle: {
-      zh: "Oper von Wolfgang Amadé Mozart",
-      en: "Oper von Wolfgang Amadé Mozart",
+      zh: "服装设计 · 朱佳乐",
+      en: "Costume Design · Jiale Zhu",
     },
     year: "2021",
     venue: {
@@ -180,8 +181,8 @@ const projects: Project[] = [
     title: "Xing Han Yun Yi",
     titleZh: "星汉云逸",
     subtitle: {
-      zh: "汉唐古典舞双人舞",
-      en: "Duet Han-Tang Classical Dance",
+      zh: "服装设计 · 朱佳乐",
+      en: "Costume Design · Jiale Zhu",
     },
     year: "2013",
     venue: {
@@ -200,8 +201,8 @@ const projects: Project[] = [
     title: "Cha Yu Fan Hou",
     titleZh: "茶余饭后",
     subtitle: {
-      zh: "当代舞",
-      en: "Contemporary Dance",
+      zh: "舞台、服装设计 · 朱佳乐",
+      en: "Stage and costume design · Jiale Zhu",
     },
     year: "2014",
     venue: {
@@ -220,15 +221,15 @@ const projects: Project[] = [
     title: "Hong Gao Liang",
     titleZh: "红高粱",
     subtitle: {
-      zh: "中国民族舞独舞",
-      en: "Solo Chinese Ethnic Dance",
+      zh: "服装设计 · 朱佳乐",
+      en: "Costume Design · Jiale Zhu",
     },
     year: "2013",
     venue: {
       zh: "Beijing",
       en: "Beijing",
     },
-    image: hongGaoLiangGalleryImages[0],
+    image: hongGaoLiangGalleryImages[1],
     images: hongGaoLiangGalleryImages,
     description: {
       zh: "Solo Chinese Ethnic Dance. Costume Design: Jiale Zhu.",
