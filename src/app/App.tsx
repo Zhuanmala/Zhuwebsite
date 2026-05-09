@@ -37,7 +37,7 @@ const unterweltGalleryImages = [
   "/unterwelt/01.jpg",
   "/unterwelt/08.jpg",
   "/unterwelt/04.jpg",
-  "/unterwelt/06.jpg",
+  "/unterwelt/09.jpg",
   "/unterwelt/03.jpg",
   "/unterwelt/02.jpg",
 ];
