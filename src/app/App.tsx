@@ -68,10 +68,10 @@ const xingHanYunYiGalleryImages = [
 ];
 
 const chaYuFanHouGalleryImages = [
-  "/cha-yu-fan-hou/01.jpg",
-  "/cha-yu-fan-hou/02.jpg",
-  "/cha-yu-fan-hou/03.jpg",
-  "/cha-yu-fan-hou/04.jpg",
+  "/cha-yu-fan-hou/01.png",
+  "/cha-yu-fan-hou/02.png",
+  "/cha-yu-fan-hou/03.png",
+  "/cha-yu-fan-hou/04.png",
 ];
 
 const hongGaoLiangGalleryImages = [
