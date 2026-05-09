@@ -30,6 +30,54 @@ const tranquillaGalleryImages = [
   "/tranquilla/10.jpg",
 ];
 
+const unterweltGalleryImages = [
+  "/unterwelt/01.jpg",
+  "/unterwelt/02.jpg",
+  "/unterwelt/03.jpg",
+  "/unterwelt/04.jpg",
+  "/unterwelt/05.jpg",
+  "/unterwelt/06.jpg",
+  "/unterwelt/07.jpg",
+  "/unterwelt/08.jpg",
+];
+
+const panicGalleryImages = [
+  "/panic-attacks/01.jpg",
+  "/panic-attacks/02.jpg",
+];
+
+const rauschGalleryImages = [
+  "/rausch/01.jpg",
+  "/rausch/02.jpg",
+  "/rausch/03.jpg",
+  "/rausch/04.jpg",
+  "/rausch/05.jpg",
+  "/rausch/06.jpg",
+];
+
+const zauberGalleryImages = [
+  "/zauber/01.jpg",
+];
+
+const xingHanYunYiGalleryImages = [
+  "/xing-han-yun-yi/01.jpg",
+  "/xing-han-yun-yi/02.jpg",
+  "/xing-han-yun-yi/03.jpg",
+];
+
+const chaYuFanHouGalleryImages = [
+  "/cha-yu-fan-hou/01.jpg",
+  "/cha-yu-fan-hou/02.jpg",
+  "/cha-yu-fan-hou/03.jpg",
+  "/cha-yu-fan-hou/04.jpg",
+];
+
+const hongGaoLiangGalleryImages = [
+  "/hong-gao-liang/01.jpg",
+  "/hong-gao-liang/02.jpg",
+  "/hong-gao-liang/03.jpg",
+];
+
 const projects: Project[] = [
   {
     id: 1,
@@ -52,92 +100,135 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Il Trittico",
+    title: "Orpheus in der Unterwelt",
     subtitle: {
-      zh: "普契尼歌剧《三部曲》",
-      en: "Puccini's opera triptych",
+      zh: "作品集项目",
+      en: "Portfolio work",
     },
-    year: "2023",
+    year: "Selected Work",
     venue: {
-      zh: "维也纳国家歌剧院",
-      en: "Vienna State Opera",
+      zh: "舞台与服装设计",
+      en: "Stage and costume design",
     },
-    image: "https://images.unsplash.com/photo-1762786113000-fa587fd3d69c?w=1080",
+    image: unterweltGalleryImages[0],
+    images: unterweltGalleryImages,
     description: {
-      zh: "协助 Henrik Ahr 教授完成舞美设计，探索现代主义视觉语言在古典歌剧中的应用。",
-      en: "Assisted Professor Henrik Ahr in completing the stage design, exploring how modernist visual language can inhabit classical opera.",
+      zh: "Orpheus in der Unterwelt 作品图集，展示舞台、服装与整体视觉设计。",
+      en: "Portfolio documentation for Orpheus in der Unterwelt, presenting stage, costume, and visual design work.",
     },
   },
   {
     id: 3,
-    title: "Die Zauberflote",
+    title: "Panic:Attacks",
     subtitle: {
-      zh: "莫扎特《魔笛》",
-      en: "Mozart's The Magic Flute",
+      zh: "作品集项目",
+      en: "Portfolio work",
     },
-    year: "2022",
+    year: "Selected Work",
     venue: {
-      zh: "独立设计项目",
-      en: "Independent design project",
+      zh: "舞台与服装设计",
+      en: "Stage and costume design",
     },
-    image: "https://images.unsplash.com/photo-1774123949516-804516f53614?w=1080",
+    image: panicGalleryImages[0],
+    images: panicGalleryImages,
     description: {
-      zh: "全系统独立设计，包含舞台、服装、灯光整体方案，探索极简主义舞台空间。",
-      en: "Developed an independent design system spanning stage, costume, and lighting, using minimal spatial language as the central study.",
+      zh: "Panic:Attacks 作品图集，展示舞台、服装与整体视觉设计。",
+      en: "Portfolio documentation for Panic:Attacks, presenting stage, costume, and visual design work.",
     },
   },
   {
     id: 4,
-    title: "Orfeo ed Euridice",
+    title: "Rausch",
     subtitle: {
-      zh: "格鲁克《奥菲欧与尤丽狄茜》",
-      en: "Gluck's Orfeo ed Euridice",
+      zh: "作品集项目",
+      en: "Portfolio work",
     },
-    year: "2023",
+    year: "Selected Work",
     venue: {
-      zh: "萨尔茨堡国际戏剧节",
-      en: "Salzburg International Theater Festival",
+      zh: "舞台与服装设计",
+      en: "Stage and costume design",
     },
-    image: "https://images.unsplash.com/photo-1767294274254-57367fa62236?w=1080",
+    image: rauschGalleryImages[0],
+    images: rauschGalleryImages,
     description: {
-      zh: "协助 Christof Loy 导演团队完成舞台服装执行，融合古典与当代美学。",
-      en: "Supported Christof Loy's directing team in stage and costume execution, balancing classical references with contemporary aesthetics.",
+      zh: "Rausch 作品图集，展示舞台、服装与整体视觉设计。",
+      en: "Portfolio documentation for Rausch, presenting stage, costume, and visual design work.",
     },
   },
   {
     id: 5,
-    title: "Costume Design Series",
+    title: "Die Zauberflote",
     subtitle: {
-      zh: "服装设计系列",
-      en: "Costume design series",
+      zh: "作品集项目",
+      en: "Portfolio work",
     },
-    year: "2021-2023",
+    year: "Selected Work",
     venue: {
-      zh: "多个制作",
-      en: "Selected productions",
+      zh: "舞台与服装设计",
+      en: "Stage and costume design",
     },
-    image: "https://images.unsplash.com/photo-1768885560793-f44873d9b19c?w=1080",
+    image: zauberGalleryImages[0],
+    images: zauberGalleryImages,
     description: {
-      zh: "涵盖歌剧、话剧、当代舞等多个领域的服装设计作品，体现对材质与形态的深入探索。",
-      en: "A series of costume works across opera, theater, and contemporary dance, shaped by close research into material, silhouette, and movement.",
+      zh: "Die Zauberflote 作品图集，展示舞台、服装与整体视觉设计。",
+      en: "Portfolio documentation for Die Zauberflote, presenting stage, costume, and visual design work.",
     },
   },
   {
     id: 6,
-    title: "Rausch",
+    title: "Xing Han Yun Yi",
     subtitle: {
-      zh: "话剧《陶醉》",
-      en: "Theater work Rausch",
+      zh: "作品集项目",
+      en: "Portfolio work",
     },
-    year: "2022",
+    year: "Selected Work",
     venue: {
-      zh: "独立设计项目",
-      en: "Independent design project",
+      zh: "舞台与服装设计",
+      en: "Stage and costume design",
     },
-    image: "https://images.unsplash.com/photo-1623838556905-359e1b448b21?w=1080",
+    image: xingHanYunYiGalleryImages[0],
+    images: xingHanYunYiGalleryImages,
     description: {
-      zh: "话剧舞台、服装、灯光整体设计，营造沉浸式戏剧空间。",
-      en: "Created the overall stage, costume, and lighting concept for an immersive theatrical environment.",
+      zh: "Xing Han Yun Yi 作品图集，展示舞台、服装与整体视觉设计。",
+      en: "Portfolio documentation for Xing Han Yun Yi, presenting stage, costume, and visual design work.",
+    },
+  },
+  {
+    id: 7,
+    title: "Cha Yu Fan Hou",
+    subtitle: {
+      zh: "作品集项目",
+      en: "Portfolio work",
+    },
+    year: "Selected Work",
+    venue: {
+      zh: "舞台与服装设计",
+      en: "Stage and costume design",
+    },
+    image: chaYuFanHouGalleryImages[0],
+    images: chaYuFanHouGalleryImages,
+    description: {
+      zh: "Cha Yu Fan Hou 作品图集，展示舞台、服装与整体视觉设计。",
+      en: "Portfolio documentation for Cha Yu Fan Hou, presenting stage, costume, and visual design work.",
+    },
+  },
+  {
+    id: 8,
+    title: "Hong Gao Liang",
+    subtitle: {
+      zh: "作品集项目",
+      en: "Portfolio work",
+    },
+    year: "Selected Work",
+    venue: {
+      zh: "舞台与服装设计",
+      en: "Stage and costume design",
+    },
+    image: hongGaoLiangGalleryImages[0],
+    images: hongGaoLiangGalleryImages,
+    description: {
+      zh: "Hong Gao Liang 作品图集，展示舞台、服装与整体视觉设计。",
+      en: "Portfolio documentation for Hong Gao Liang, presenting stage, costume, and visual design work.",
     },
   },
 ];
