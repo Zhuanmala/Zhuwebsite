@@ -9,6 +9,7 @@ type LocalizedText = Record<Language, string>;
 type Project = {
   id: number;
   title: string;
+  titleZh?: string;
   subtitle: LocalizedText;
   year: string;
   venue: LocalizedText;
@@ -31,14 +32,14 @@ const tranquillaGalleryImages = [
 ];
 
 const unterweltGalleryImages = [
-  "/unterwelt/01.jpg",
-  "/unterwelt/02.jpg",
-  "/unterwelt/03.jpg",
-  "/unterwelt/04.jpg",
   "/unterwelt/05.jpg",
   "/unterwelt/06.jpg",
-  "/unterwelt/07.jpg",
+  "/unterwelt/01.jpg",
   "/unterwelt/08.jpg",
+  "/unterwelt/04.jpg",
+  "/unterwelt/06.jpg",
+  "/unterwelt/03.jpg",
+  "/unterwelt/02.jpg",
 ];
 
 const panicGalleryImages = [
@@ -47,9 +48,8 @@ const panicGalleryImages = [
 ];
 
 const rauschGalleryImages = [
-  "/rausch/01.jpg",
-  "/rausch/02.jpg",
   "/rausch/03.jpg",
+  "/rausch/01.jpg",
   "/rausch/04.jpg",
   "/rausch/05.jpg",
   "/rausch/06.jpg",
@@ -57,6 +57,7 @@ const rauschGalleryImages = [
 
 const zauberGalleryImages = [
   "/zauber/01.jpg",
+  "/zauber/02.jpg",
 ];
 
 const xingHanYunYiGalleryImages = [
@@ -83,152 +84,155 @@ const projects: Project[] = [
     id: 1,
     title: "Tranquilla Trampeltreu / Der Lindwurm und der Schmetterling",
     subtitle: {
-      zh: "Wilfried Hiller / Michael Ende 儿童音乐会",
-      en: "Children's concert by Wilfried Hiller / Michael Ende",
+      zh: "舞台、服装、化妆、灯光、道具设计 · 朱佳乐",
+      en: "Stage, costume, make-up, lighting and prop design · Jiale Zhu",
     },
     year: "2025",
     venue: {
       zh: "巴伐利亚国立歌剧院 · Bergson Kunstkraftwerk",
       en: "Bavarian State Opera · Bergson Kunstkraftwerk",
     },
-    image: tranquillaGalleryImages[0],
+    image: tranquillaGalleryImages[4],
     images: tranquillaGalleryImages,
     description: {
-      zh: "Bayerische Staatsoper Kind&Co 儿童音乐会，面向 5 岁以上观众，时长约 60 分钟、无中场休息。作品由巴伐利亚国家管弦乐团与国立歌剧院歌唱家讲述两则 Michael Ende 的动物寓言，音乐由 Wilfried Hiller 创作。导演 Catharina von Bülow，音乐指导 Rafaela Seywald；朱佳乐负责道具设计。",
-      en: "A Bayerische Staatsoper Kind&Co children's concert for audiences aged 5 and above, with a running time of about 60 minutes and no interval. The Bavarian State Orchestra and singers from the State Opera tell two animal fables by Michael Ende, set to music by Wilfried Hiller. Directed by Catharina von Bülow and conducted by Rafaela Seywald; Jiale Zhu is credited with prop design.",
+      zh: "Children's concert by Wilfried Hiller / Michael Ende。Bayerische Staatsoper Kind&Co 儿童音乐会，面向 5 岁以上观众，时长约 60 分钟、无中场休息。Musikalische Leitung: Rafaela Seywald. Szenische Einrichtung: Catharina von Bülow. Ausstattung: Jiale Zhu.",
+      en: "Children's concert by Wilfried Hiller / Michael Ende. A Bayerische Staatsoper Kind&Co concert for audiences aged 5 and above, with a running time of about 60 minutes and no interval. Musikalische Leitung: Rafaela Seywald. Szenische Einrichtung: Catharina von Bülow. Ausstattung: Jiale Zhu.",
     },
   },
   {
     id: 2,
-    title: "Orpheus in der Unterwelt",
+    title: "Orphous in der Unterwelt",
     subtitle: {
-      zh: "作品集项目",
-      en: "Portfolio work",
+      zh: "Opéra-Bouffon in 2 Akten/4 Bildern",
+      en: "Opéra-Bouffon in 2 Akten/4 Bildern",
     },
-    year: "Selected Work",
+    year: "2021",
     venue: {
-      zh: "舞台与服装设计",
-      en: "Stage and costume design",
+      zh: "Max Schlereth Saal Universität Mozarteum",
+      en: "Max Schlereth Saal Universität Mozarteum",
     },
     image: unterweltGalleryImages[0],
     images: unterweltGalleryImages,
     description: {
-      zh: "Orpheus in der Unterwelt 作品图集，展示舞台、服装与整体视觉设计。",
-      en: "Portfolio documentation for Orpheus in der Unterwelt, presenting stage, costume, and visual design work.",
+      zh: "Orphous in der Unterwelt. Opéra-Bouffon in 2 Akten/4 Bildern. Musik von Jacques Offenbach, Version 1858. Musikalische Leitung: Kai Röhrig. Regie: Rosamund Gilmore. Bühne: Jiale Zhu. Kostüme: Jisu Park. Dramaturgie: Ronny Dietrich.",
+      en: "Orphous in der Unterwelt. Opéra-Bouffon in 2 Akten/4 Bildern. Musik von Jacques Offenbach, Version 1858. Musikalische Leitung: Kai Röhrig. Regie: Rosamund Gilmore. Bühne: Jiale Zhu. Kostüme: Jisu Park. Dramaturgie: Ronny Dietrich.",
     },
   },
   {
     id: 3,
     title: "Panic:Attacks",
     subtitle: {
-      zh: "作品集项目",
-      en: "Portfolio work",
+      zh: "Costume Design · Jiale Zhu",
+      en: "Costume Design · Jiale Zhu",
     },
-    year: "Selected Work",
+    year: "2022",
     venue: {
-      zh: "舞台与服装设计",
-      en: "Stage and costume design",
+      zh: "Barockmuseum Salzburg",
+      en: "Barockmuseum Salzburg",
     },
-    image: panicGalleryImages[0],
+    image: panicGalleryImages[1],
     images: panicGalleryImages,
     description: {
-      zh: "Panic:Attacks 作品图集，展示舞台、服装与整体视觉设计。",
-      en: "Portfolio documentation for Panic:Attacks, presenting stage, costume, and visual design work.",
+      zh: "What happens when panic attacks? This is the initial question of a performative research by the director in collaboration with dancers, an actor and a composer. Based on interviews with panic attack victims, the effects of a panic attack on body, breath and thoughts are scenically explored, deconstructed and reconstructed - always in the awareness that there is no \"one panic attack\". Directed by: Lea Oltmanns | Sound Design: Alexander Bauer | Costume Design: Jiale Zhu.",
+      en: "What happens when panic attacks? This is the initial question of a performative research by the director in collaboration with dancers, an actor and a composer. Based on interviews with panic attack victims, the effects of a panic attack on body, breath and thoughts are scenically explored, deconstructed and reconstructed - always in the awareness that there is no \"one panic attack\". Directed by: Lea Oltmanns | Sound Design: Alexander Bauer | Costume Design: Jiale Zhu.",
     },
   },
   {
     id: 4,
     title: "Rausch",
     subtitle: {
-      zh: "作品集项目",
-      en: "Portfolio work",
+      zh: "Costume Design · Jiale Zhu",
+      en: "Costume Design · Jiale Zhu",
     },
-    year: "Selected Work",
+    year: "2021",
     venue: {
-      zh: "舞台与服装设计",
-      en: "Stage and costume design",
+      zh: "Salzburg Schauspiel",
+      en: "Salzburg Schauspiel",
     },
     image: rauschGalleryImages[0],
     images: rauschGalleryImages,
     description: {
-      zh: "Rausch 作品图集，展示舞台、服装与整体视觉设计。",
-      en: "Portfolio documentation for Rausch, presenting stage, costume, and visual design work.",
+      zh: "Directed by: Lea Oltmanns. Stage: Julia Soest, Magdalena Hofer, Jiale Zhu. Costume Design: Jiale Zhu.",
+      en: "Directed by: Lea Oltmanns. Stage: Julia Soest, Magdalena Hofer, Jiale Zhu. Costume Design: Jiale Zhu.",
     },
   },
   {
     id: 5,
     title: "Die Zauberflote",
     subtitle: {
-      zh: "作品集项目",
-      en: "Portfolio work",
+      zh: "Oper von Wolfgang Amadé Mozart",
+      en: "Oper von Wolfgang Amadé Mozart",
     },
-    year: "Selected Work",
+    year: "2021",
     venue: {
-      zh: "舞台与服装设计",
-      en: "Stage and costume design",
+      zh: "Max Schlereth Saal Universität Mozarteum",
+      en: "Max Schlereth Saal Universität Mozarteum",
     },
     image: zauberGalleryImages[0],
     images: zauberGalleryImages,
     description: {
-      zh: "Die Zauberflote 作品图集，展示舞台、服装与整体视觉设计。",
-      en: "Portfolio documentation for Die Zauberflote, presenting stage, costume, and visual design work.",
+      zh: "Oper von Wolfgang Amadé Mozart. Musikalische Leitung: Kai Röhrig. Inszenierung: Magdolna Parditka und Alexandra Szemerédy. Bühnenbild: Michael Hofer-Lenz. Kostüme: Magdolna Parditka und Jiale Zhu. Dramaturgie: Christian Arseni.",
+      en: "Oper von Wolfgang Amadé Mozart. Musikalische Leitung: Kai Röhrig. Inszenierung: Magdolna Parditka und Alexandra Szemerédy. Bühnenbild: Michael Hofer-Lenz. Kostüme: Magdolna Parditka und Jiale Zhu. Dramaturgie: Christian Arseni.",
     },
   },
   {
     id: 6,
     title: "Xing Han Yun Yi",
+    titleZh: "星汉云逸",
     subtitle: {
-      zh: "作品集项目",
-      en: "Portfolio work",
+      zh: "汉唐古典舞双人舞",
+      en: "Duet Han-Tang Classical Dance",
     },
-    year: "Selected Work",
+    year: "2013",
     venue: {
-      zh: "舞台与服装设计",
-      en: "Stage and costume design",
+      zh: "Beijing",
+      en: "Beijing",
     },
     image: xingHanYunYiGalleryImages[0],
     images: xingHanYunYiGalleryImages,
     description: {
-      zh: "Xing Han Yun Yi 作品图集，展示舞台、服装与整体视觉设计。",
-      en: "Portfolio documentation for Xing Han Yun Yi, presenting stage, costume, and visual design work.",
+      zh: "Duet Han-Tang Classical Dance. Costume Design: Jiale Zhu.",
+      en: "Duet Han-Tang Classical Dance. Costume Design: Jiale Zhu.",
     },
   },
   {
     id: 7,
     title: "Cha Yu Fan Hou",
+    titleZh: "茶余饭后",
     subtitle: {
-      zh: "作品集项目",
-      en: "Portfolio work",
+      zh: "当代舞",
+      en: "Contemporary Dance",
     },
-    year: "Selected Work",
+    year: "2014",
     venue: {
-      zh: "舞台与服装设计",
-      en: "Stage and costume design",
+      zh: "Beijing",
+      en: "Beijing",
     },
     image: chaYuFanHouGalleryImages[0],
     images: chaYuFanHouGalleryImages,
     description: {
-      zh: "Cha Yu Fan Hou 作品图集，展示舞台、服装与整体视觉设计。",
-      en: "Portfolio documentation for Cha Yu Fan Hou, presenting stage, costume, and visual design work.",
+      zh: "Contemporary Dance. Stage and costume design: Jiale Zhu.",
+      en: "Contemporary Dance. Stage and costume design: Jiale Zhu.",
     },
   },
   {
     id: 8,
     title: "Hong Gao Liang",
+    titleZh: "红高粱",
     subtitle: {
-      zh: "作品集项目",
-      en: "Portfolio work",
+      zh: "中国民族舞独舞",
+      en: "Solo Chinese Ethnic Dance",
     },
-    year: "Selected Work",
+    year: "2013",
     venue: {
-      zh: "舞台与服装设计",
-      en: "Stage and costume design",
+      zh: "Beijing",
+      en: "Beijing",
     },
     image: hongGaoLiangGalleryImages[0],
     images: hongGaoLiangGalleryImages,
     description: {
-      zh: "Hong Gao Liang 作品图集，展示舞台、服装与整体视觉设计。",
-      en: "Portfolio documentation for Hong Gao Liang, presenting stage, costume, and visual design work.",
+      zh: "Solo Chinese Ethnic Dance. Costume Design: Jiale Zhu.",
+      en: "Solo Chinese Ethnic Dance. Costume Design: Jiale Zhu.",
     },
   },
 ];
@@ -259,6 +263,7 @@ const content = {
       paragraphs: [
         "拥有中欧顶尖艺术院校双重教育背景（北京舞蹈学院 & 奥地利莫扎特大学），现供职于世界顶尖歌剧院 - 德国巴伐利亚国立歌剧院。",
         "具备国际化审美视野与严谨的德国剧院工业化生产流程经验。擅长跨国团队沟通，拥有处理大型歌剧复杂视觉系统落地的实战经验。",
+        "国际奖项：动画电影《A Hamlet Machine》获 2022 年全球国际大学生影响力电影节优秀奖。",
       ],
       educationTitle: "教育背景",
       education: [
@@ -326,6 +331,7 @@ const content = {
       paragraphs: [
         "Educated across leading art institutions in China and Europe, including Beijing Dance Academy and Universitat Mozarteum Salzburg, Zhu Jiale currently works at the Bavarian State Opera.",
         "Her practice combines an international visual perspective with hands-on experience in rigorous German theater production workflows, especially for large-scale opera and complex visual systems.",
+        "International award: the animated film A Hamlet Machine received the Excellence Award at the 2022 Global International Student Impact Film Festival.",
       ],
       educationTitle: "EDUCATION",
       education: [
@@ -372,6 +378,9 @@ const content = {
 
 const technicalSkills = ["MegaCAD, AutoCAD", "Cinema 4D", "ArchiCAD"];
 const creativeSkills = ["Photoshop, InDesign", "Premiere, Final Cut", "Costume Construction"];
+
+const getProjectTitle = (project: Project, language: Language) =>
+  language === "zh" && project.titleZh ? project.titleZh : project.title;
 
 export default function App() {
   const [language, setLanguage] = useState<Language>("en");
@@ -590,7 +599,7 @@ export default function App() {
                   <div className="relative aspect-[3/4] overflow-hidden bg-white/5 mb-4">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={getProjectTitle(project, language)}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -599,7 +608,7 @@ export default function App() {
                       <div className="text-sm text-white/80">{project.venue[language]}</div>
                     </div>
                   </div>
-                  <h3 className="text-xl mb-1 font-light">{project.title}</h3>
+                  <h3 className="text-xl mb-1 font-light">{getProjectTitle(project, language)}</h3>
                   <p className="text-white/50 text-sm font-light">{project.subtitle[language]}</p>
                 </motion.div>
               ))}
@@ -745,6 +754,12 @@ export default function App() {
                     </div>
                     <div className="font-light">+86 130 0215 0771</div>
                   </a>
+                  <a href="tel:+4915238786588" className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group">
+                    <div className="w-12 h-12 border border-white/20 group-hover:border-white/40 transition-colors flex items-center justify-center">
+                      <Phone size={20} />
+                    </div>
+                    <div className="font-light">+4915238786588</div>
+                  </a>
                   <div className="flex items-center gap-4 text-white/60">
                     <div className="w-12 h-12 border border-white/20 flex items-center justify-center">
                       <MapPin size={20} />
@@ -789,7 +804,7 @@ export default function App() {
             <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
               <img
                 src={currentProjectImage}
-                alt={selectedProject.title}
+                alt={getProjectTitle(selectedProject, language)}
                 className="w-full h-full object-contain"
               />
 
@@ -836,7 +851,7 @@ export default function App() {
               <div className="flex justify-between items-start mb-6 gap-6">
                 <div>
                   <div className="text-sm text-white/40 mb-2">{selectedProject.year} · {selectedProject.venue[language]}</div>
-                  <h3 className="text-3xl md:text-4xl font-light mb-2">{selectedProject.title}</h3>
+                  <h3 className="text-3xl md:text-4xl font-light mb-2">{getProjectTitle(selectedProject, language)}</h3>
                   <p className="text-xl text-white/60 font-light">{selectedProject.subtitle[language]}</p>
                 </div>
                 <button
