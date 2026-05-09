@@ -31,6 +31,16 @@ export default defineConfig({
     },
   },
 
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name]-bilingual-v2-[hash].js',
+        chunkFileNames: 'assets/[name]-bilingual-v2-[hash].js',
+        assetFileNames: 'assets/[name]-bilingual-v2-[hash][extname]',
+      },
+    },
+  },
+
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
