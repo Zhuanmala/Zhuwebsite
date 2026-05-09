@@ -27,12 +27,12 @@ type Project = {
 };
 
 const tranquillaImages = [
+  "https://www.staatsoper.de/media/_processed_/b/b/csm_Tranquilla_2_066f530751.jpg",
   "https://www.in-muenchen.de/wp-content/uploads/2025/05/fe477bf-013320-e9ad7f2db87df252959d935ca886f144dc3288fd-tranquilawebsite-programm-header-1920x10802.webp",
   "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1600&auto=format&fit=crop&q=80",
   "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1600&auto=format&fit=crop&q=80",
   "https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?w=1600&auto=format&fit=crop&q=80",
   "https://images.unsplash.com/photo-1503095396549-807759245b35?w=1600&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=1600&auto=format&fit=crop&q=80",
 ];
 
 const projects: Project[] = [
@@ -49,17 +49,17 @@ const projects: Project[] = [
       zh: "巴伐利亚国立歌剧院 · Bergson Kunstkraftwerk",
     },
     credit: {
-      en: "Set and visual design · Jiale Zhu",
-      zh: "舞台与视觉设计 · 朱佳乐",
+      en: "Prop Design · Jiale Zhu",
+      zh: "道具设计 · 朱佳乐",
     },
     description: {
-      en: "A Bayerische Staatsoper Kind&Co concert for audiences aged 5 and above. The Bavarian State Orchestra and singers from the State Opera tell two animal fables by Michael Ende, set to music by Wilfried Hiller. The production runs about 60 minutes without an interval, with musical direction by Rafaela Seywald and direction by Catharina von Bülow.",
-      zh: "巴伐利亚国立歌剧院 Kind&Co 儿童音乐会，面向 5 岁以上观众，时长约 60 分钟且无中场休息。巴伐利亚国家管弦乐团与国立歌剧院歌唱演员讲述 Michael Ende 的两则动物寓言，由 Wilfried Hiller 作曲，Rafaela Seywald 担任音乐指导，Catharina von Bülow 执导。",
+      en: "A Bayerische Staatsoper Kind&Co concert for audiences aged 5 and above. The Bavarian State Orchestra and singers from the State Opera tell two animal fables by Michael Ende, set to music by Wilfried Hiller. The production runs about 60 minutes without an interval, with musical direction by Rafaela Seywald, direction by Catharina von Bülow, and prop design by Jiale Zhu.",
+      zh: "巴伐利亚国立歌剧院 Kind&Co 儿童音乐会，面向 5 岁以上观众，时长约 60 分钟且无中场休息。巴伐利亚国家管弦乐团与国立歌剧院歌唱演员讲述 Michael Ende 的两则动物寓言，由 Wilfried Hiller 作曲，Rafaela Seywald 担任音乐指导，Catharina von Bülow 执导，朱佳乐负责道具设计。",
     },
     image: tranquillaImages[0],
     images: tranquillaImages,
     source:
-      "https://www.staatsoper.de/stuecke/tranquilla-trampeltreu-der-lindwurm-und-der-schmetterling-1",
+      "https://www.staatsoper.de/en/productions/tranquilla-trampeltreu-der-lindwurm-und-der-schmetterling-1/2025-06-24-1600-15088",
   },
   {
     id: 2,
