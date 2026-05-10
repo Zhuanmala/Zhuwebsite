@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ChevronLeft, ChevronRight, Mail, MapPin, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin, X } from "lucide-react";
 
 type Language = "zh" | "en";
 
@@ -390,6 +390,8 @@ export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [senderEmail, setSenderEmail] = useState("");
   const [contactMessage, setContactMessage] = useState("");
+  const [isProjectAutoPlaying, setIsProjectAutoPlaying] = useState(true);
+  const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
   const t = content[language];
   const selectedProjectImages = selectedProject
     ? selectedProject.images?.length ? selectedProject.images : [selectedProject.image]
@@ -397,18 +399,19 @@ export default function App() {
   const currentProjectImage = selectedProjectImages[currentImageIndex] ?? selectedProject?.image ?? "";
 
   useEffect(() => {
-    if (selectedProjectImages.length <= 1) return;
+    if (!isProjectAutoPlaying || selectedProjectImages.length <= 1) return;
 
     const timer = window.setInterval(() => {
       setCurrentImageIndex((current) => (current + 1) % selectedProjectImages.length);
     }, 4200);
 
     return () => window.clearInterval(timer);
-  }, [selectedProjectImages.length]);
+  }, [isProjectAutoPlaying, selectedProjectImages.length]);
 
   const openProject = (project: Project) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
+    setIsProjectAutoPlaying(true);
   };
 
   const showPreviousProjectImage = () => {
@@ -424,9 +427,10 @@ export default function App() {
   };
 
   const sendContactEmail = () => {
+    const recipient = ["zhujiale0208", "icloud.com"].join("@");
     const subject = encodeURIComponent("Portfolio inquiry");
     const body = encodeURIComponent(`From: ${senderEmail}\n\n${contactMessage}`);
-    window.location.href = `mailto:zhujiale0208@icloud.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -758,9 +762,9 @@ export default function App() {
                     className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group text-left"
                   >
                     <div className="w-12 h-12 border border-white/20 group-hover:border-white/40 transition-colors flex items-center justify-center">
-                      <Mail size={20} />
+                      <span aria-hidden="true" className="text-xl leading-none">📧</span>
                     </div>
-                    <div className="font-light">zhujiale0208@icloud.com</div>
+                    <div className="font-light">{language === "zh" ? "发送邮件" : "Send email"}</div>
                   </button>
                   <div className="flex items-center gap-4 text-white/60">
                     <div className="w-12 h-12 border border-white/20 flex items-center justify-center">
@@ -804,11 +808,18 @@ export default function App() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
-              <img
-                src={currentProjectImage}
-                alt={getProjectTitle(selectedProject, language)}
-                className="w-full h-full object-contain"
-              />
+              <button
+                type="button"
+                aria-label="Open enlarged image"
+                onClick={() => setEnlargedImage(currentProjectImage)}
+                className="w-full h-full cursor-zoom-in"
+              >
+                <img
+                  src={currentProjectImage}
+                  alt={getProjectTitle(selectedProject, language)}
+                  className="w-full h-full object-contain"
+                />
+              </button>
 
               {selectedProjectImages.length > 1 && (
                 <>
@@ -829,8 +840,17 @@ export default function App() {
                     <ChevronRight size={22} />
                   </button>
                   <div className="absolute left-6 right-6 bottom-5 flex items-center justify-between gap-4">
-                    <div className="text-xs text-white/80 bg-black/45 px-3 py-1">
-                      {String(currentImageIndex + 1).padStart(2, "0")} / {String(selectedProjectImages.length).padStart(2, "0")}
+                    <div className="flex items-center gap-2">
+                      <div className="text-xs text-white/80 bg-black/45 px-3 py-1">
+                        {String(currentImageIndex + 1).padStart(2, "0")} / {String(selectedProjectImages.length).padStart(2, "0")}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setIsProjectAutoPlaying((current) => !current)}
+                        className="text-xs text-white/80 bg-black/45 hover:bg-white hover:text-black transition-colors px-3 py-1"
+                      >
+                        {isProjectAutoPlaying ? "Pause" : "Play"}
+                      </button>
                     </div>
                     <div className="flex gap-2">
                       {selectedProjectImages.map((image, index) => (
@@ -870,6 +890,32 @@ export default function App() {
               </p>
             </div>
           </motion.div>
+        </motion.div>
+      )}
+
+      {/* Enlarged Image Modal */}
+      {enlargedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          onClick={() => setEnlargedImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close enlarged image"
+            onClick={() => setEnlargedImage(null)}
+            className="absolute right-5 top-5 w-10 h-10 border border-white/25 bg-black/45 hover:bg-white hover:text-black transition-colors flex items-center justify-center"
+          >
+            <X size={20} />
+          </button>
+          <img
+            src={enlargedImage}
+            alt="Enlarged portfolio view"
+            className="max-h-[92vh] max-w-[96vw] object-contain"
+            onClick={(event) => event.stopPropagation()}
+          />
         </motion.div>
       )}
 
