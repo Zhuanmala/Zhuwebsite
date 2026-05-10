@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ChevronLeft, ChevronRight, Mail, Phone, MapPin, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Mail, MapPin, X } from "lucide-react";
 
 type Language = "zh" | "en";
 
@@ -387,6 +387,9 @@ export default function App() {
   const [language, setLanguage] = useState<Language>("en");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [senderEmail, setSenderEmail] = useState("");
+  const [contactMessage, setContactMessage] = useState("");
   const t = content[language];
   const selectedProjectImages = selectedProject
     ? selectedProject.images?.length ? selectedProject.images : [selectedProject.image]
@@ -418,6 +421,12 @@ export default function App() {
   const showNextProjectImage = () => {
     if (selectedProjectImages.length <= 1) return;
     setCurrentImageIndex((current) => (current + 1) % selectedProjectImages.length);
+  };
+
+  const sendContactEmail = () => {
+    const subject = encodeURIComponent("Portfolio inquiry");
+    const body = encodeURIComponent(`From: ${senderEmail}\n\n${contactMessage}`);
+    window.location.href = `mailto:zhujiale0208@icloud.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -743,24 +752,16 @@ export default function App() {
 
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="space-y-6">
-                  <a href="mailto:zhujiale0208@icloud.com" className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group">
+                  <button
+                    type="button"
+                    onClick={() => setIsContactOpen(true)}
+                    className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group text-left"
+                  >
                     <div className="w-12 h-12 border border-white/20 group-hover:border-white/40 transition-colors flex items-center justify-center">
                       <Mail size={20} />
                     </div>
                     <div className="font-light">zhujiale0208@icloud.com</div>
-                  </a>
-                  <a href="tel:13002150771" className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group">
-                    <div className="w-12 h-12 border border-white/20 group-hover:border-white/40 transition-colors flex items-center justify-center">
-                      <Phone size={20} />
-                    </div>
-                    <div className="font-light">+86 130 0215 0771</div>
-                  </a>
-                  <a href="tel:+4915238786588" className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group">
-                    <div className="w-12 h-12 border border-white/20 group-hover:border-white/40 transition-colors flex items-center justify-center">
-                      <Phone size={20} />
-                    </div>
-                    <div className="font-light">+49 152 3878 6588</div>
-                  </a>
+                  </button>
                   <div className="flex items-center gap-4 text-white/60">
                     <div className="w-12 h-12 border border-white/20 flex items-center justify-center">
                       <MapPin size={20} />
@@ -867,6 +868,70 @@ export default function App() {
               <p className="text-white/60 leading-relaxed font-light">
                 {selectedProject.description[language]}
               </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+
+      {/* Contact Modal */}
+      {isContactOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setIsContactOpen(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.96, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.05 }}
+            className="w-full max-w-3xl min-h-[70vh] bg-white text-black shadow-2xl flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative border-b border-black/10 px-5 py-4 text-center">
+              <h3 className="font-medium">Contact</h3>
+              <button
+                type="button"
+                aria-label="Close contact form"
+                onClick={() => setIsContactOpen(false)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/20 text-white hover:bg-black/40 transition-colors flex items-center justify-center"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="flex-1 flex flex-col">
+              <input
+                value={senderEmail}
+                onChange={(event) => setSenderEmail(event.target.value)}
+                placeholder="From: (enter your email address)..."
+                className="w-full border-b border-black/10 px-5 py-3 text-sm outline-none placeholder:text-black/45"
+                type="email"
+              />
+              <textarea
+                value={contactMessage}
+                onChange={(event) => setContactMessage(event.target.value)}
+                placeholder="Write your message..."
+                className="flex-1 min-h-[360px] w-full resize-none px-5 py-4 text-sm outline-none placeholder:text-black/45"
+              />
+            </div>
+
+            <div className="border-t border-black/10 px-5 py-3 flex justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setIsContactOpen(false)}
+                className="min-w-32 rounded-full bg-black/10 px-5 py-2 text-sm text-black/70 hover:bg-black/15 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={sendContactEmail}
+                className="min-w-32 rounded-full bg-black px-5 py-2 text-sm text-white hover:bg-black/80 transition-colors"
+              >
+                Send
+              </button>
             </div>
           </motion.div>
         </motion.div>
