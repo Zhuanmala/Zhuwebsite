@@ -762,7 +762,22 @@ export default function App() {
                     className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group text-left"
                   >
                     <div className="w-12 h-12 border border-white/20 group-hover:border-white/40 transition-colors flex items-center justify-center">
-                      <span aria-hidden="true" className="text-xl leading-none">📧</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 32 32"
+                        height="24"
+                        width="24"
+                        aria-hidden="true"
+                        className="text-current"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M 2.00 7.67 C 2.00 7.11 2.45 6.67 3.00 6.67 H 29.00 C 29.55 6.67 30.00 7.11 30.00 7.67 V 24.33 C 30.00 24.89 29.55 25.33 29.00 25.33 H 3.00 C 2.45 25.33 2.00 24.89 2.00 24.33 V 7.67 ZM 28.30 7.67 L 3.75 7.67 L 15.01 18.07 C 15.58 18.60 16.47 18.60 17.04 18.07 L 28.30 7.67 ZM 3.00 8.34 L 3.00 23.68 L 11.31 16.01 L 3.00 8.34 ZM 3.77 24.33 L 28.28 24.33 L 20.01 16.69 L 17.72 18.80 C 16.76 19.68 15.29 19.68 14.33 18.80 L 12.05 16.69 L 3.77 24.33 ZM 20.74 16.01 L 29.00 23.63 V 8.39 L 20.74 16.01 Z"
+                          clipRule="evenodd"
+                          fillRule="evenodd"
+                        />
+                      </svg>
                     </div>
                     <div className="font-light">{language === "zh" ? "发送邮件" : "Send email"}</div>
                   </button>
